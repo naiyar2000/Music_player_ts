@@ -32,7 +32,10 @@ const next = document.getElementById('next');
 const title = document.getElementById('title');
 const cover = document.getElementById('cover');
 const music_container = document.getElementById('music_container');
+const progress_container = document.getElementById('progress-container');
 const progress_bar = document.getElementById('progress-bar');
+const volume_container = document.getElementById('volume-container');
+const voluem_bar = document.getElementById('volume-bar');
 let songIndex = 0;
 loadSong(songDetails[songIndex]);
 //Load the song to the audio player
@@ -66,7 +69,7 @@ function nextSong() {
     loadSong(songDetails[songIndex]);
     playSong();
 }
-//Paust the song
+//Pause the song
 function pauseSong() {
     music_container.classList.remove('play');
     play.querySelector('i.far').classList.add('fa-play-circle');
@@ -80,6 +83,18 @@ function updateProgress(e) {
     progress_bar.style.width = `${progressPercent}%`;
     progress_bar.setAttribute("aria-valuenow", `${progressPercent}`);
 }
+function setProgress(e) {
+    const width = this.clientWidth;
+    const clickX = e.offsetX;
+    const duration = audio.duration;
+    audio.currentTime = (clickX / width) * duration;
+}
+function setVolume(e) {
+    const width = this.clientWidth;
+    const clickX = e.offsetX;
+    const volume = audio.volume;
+    audio.volume = (clickX / width) * volume;
+}
 //Events to manage the user interaction
 play.addEventListener('click', () => {
     const isPlaying = music_container.classList.contains('play');
@@ -90,6 +105,13 @@ play.addEventListener('click', () => {
         playSong();
     }
 });
+//click events on previous and next version
 prev.addEventListener('click', prevSong);
 next.addEventListener('click', nextSong);
+//update the time progress bar
 audio.addEventListener('timeupdate', updateProgress);
+//update the volume progress bar
+// audio.addEventListener('')
+//click on progress bar
+progress_container.addEventListener('click', setProgress);
+//click on volume bar
