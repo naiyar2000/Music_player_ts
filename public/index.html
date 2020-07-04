@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My music</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="bg-dark">
+        <nav class="navbar navbar-expand-md navbar-dark bg-secondary">
+            <div class="container-fluid ">
+              <a class="navbar-brand" href="#">My music</a>
+              <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+          
+              <div class="navbar-collapse collapse" id="navbarsExample04">
+                <ul class="navbar-nav mr-auto mb-2 mb-md-0">
+                  <li class="nav-item active">
+                    <a class="nav-link" aria-current="page" href="#">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Browse</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#" >Disabled</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-expanded="false">Dropdown</a>
+                    <ul class="dropdown-menu" aria-labelledby="dropdown04">
+                      <li><a class="dropdown-item" href="#">Action</a></li>
+                      <li><a class="dropdown-item" href="#">Another action</a></li>
+                      <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                  </li>
+                </ul>
+                <form>
+                  <input class="form-control" type="text" placeholder="Search" aria-label="Search">
+                </form>
+              </div>
+            </div>
+        </nav>
+        <div class="py-1 px-5" id="music_container">
+            <div style="display: flex;" class="mx-auto">
+                <div class="card mx-1" style="height: 100vh; width: 30%; background-color: #ccc"><img id="cover" src="../img/Dancing_On_My_Own.jpg" alt="hello" height="200" width="200"></div>
+                <div class="card mx-0" style="height: 100vh; width: 70%; background-color: rgb(180, 169, 169) " id="title"></div>
+            </div>
+        </div>
+        <audio src="audio/Dancing On My Own.mp3" id="audio"></audio>
+        <div class="fixed-bottom bg-secondary mx-auto mb-1" style="width: 74rem; height: 6rem">
+            <div class="progress  mt-1" style="height: 3px;" id="progress-container">
+                <div class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" id="progress-bar"></div>
+            </div>
+            <ul class="list-group d-flex flex-row justify-content-center align-item-center mt-2">
+                <li class="list-group-item mx-1" style="background: none; border: none;" id="prev">
+                    <i class="fas fa-step-backward fa-2x" style="cursor: pointer;"></i>
+                </li>
+                <li class="list-group-item mx-1" style="background: none; border: none;" id="play">
+                    <i class="far fa-play-circle fa-2x" style="cursor: pointer;"></i>
+                </li>
+                <li class="list-group-item mx-1" style="background: none; border: none;" id="next">
+                    <i class="fas fa-step-forward fa-2x" style="cursor: pointer;"></i>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <script type="module" src="./index.js"></script>
+</body>
+</html>

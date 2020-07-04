@@ -1,0 +1,27 @@
+*{
+    margin: 0;
+    padding: 0
+}
+
+body{
+    overflow: hidden;
+}
+
+.progress-container{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 0.8em;
+    background: #ffffff;
+    border-radius: 5px;
+    cursor: pointer;
+    height: 4px;
+    width: 98%;
+}
+
+.progress_bar {
+    background-color: #fe8daa;
+    border-radius: 5px;
+    height: 100%;
+    width: 0%;
+    transition: width 0.1s linear;
+}
