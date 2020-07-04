@@ -1,9 +1,38 @@
+import { string } from "yargs";
 
-const songDetails = [
-    'Dancing_On_My_Own',
-    'Insomnia',
-    'Say_Something',
-    'Thunder'
+// const songDetails = [
+//     {
+//         audiosrc: string,
+//         imgsrc: string, 
+//         name: string,
+//         artist: string
+//     }
+// ]
+const songDetails: {audiosrc: string, imgsrc: string, name: string, artist: string}[] = [
+    {
+        audiosrc: '../audio/Dancing_On_My_Own.mp3',
+        imgsrc: '../img/Dancing_On_My_Own.jpg', 
+        name:'Dancing_On_My_Own',
+        artist: 'Calum Scott'
+    },
+    {
+        audiosrc: '../audio/Insomnia.mp3',
+        imgsrc: '../img/Insomnia.jpg', 
+        name:'Insomnia',
+        artist: 'Daya'
+    },
+    {
+        audiosrc: '../audio/Say_Something.mp3',
+        imgsrc: '../img/Say_Something.jpg', 
+        name:'Say_Something',
+        artist: 'Justin Timberlake'
+    },
+    {
+        audiosrc: '../audio/Thunder.mp3',
+        imgsrc: '../img/Thunder.jpg', 
+        name:'Thunder',
+        artist: 'Imagine Dragons'
+    }
 ]
 
 const audio = (document.getElementById('audio') as HTMLAudioElement);
@@ -25,11 +54,11 @@ let songIndex: number  = 0;
 
 loadSong(songDetails[songIndex]);
 
-function loadSong(song: string) {
+function loadSong(song: any) {
     
-    title.innerText = song;
-    audio.src = `../audio/${song}.mp3`;
-    cover.src = `../img/${song}.jpg`;
+    title.innerText = song.name;
+    audio.src = `../audio/${song.audiosrc}`;
+    cover.src = `../img/${song.imgsrc}`;
 }
 
 function playSong() {
