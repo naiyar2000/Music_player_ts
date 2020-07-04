@@ -37,6 +37,7 @@ const progress_bar = document.getElementById('progress-bar');
 const volume_container = document.getElementById('volume-container');
 const voluem_bar = document.getElementById('volume-bar');
 const muted = document.getElementById('mute');
+const volume = document.getElementById('volume');
 let songIndex = 0;
 let isMute = false;
 loadSong(songDetails[songIndex]);
@@ -94,10 +95,15 @@ function setProgress(e) {
 function setMute() {
     if (!isMute) {
         audio.volume = 0.0;
+        volume.querySelector('i.fas').classList.add('fa-volume-mute');
+        volume.querySelector('i.fas').classList.remove('fa-volume-up');
         isMute = !isMute;
     }
     else {
         audio.volume = 1.0;
+        volume.querySelector('i.fas').classList.remove('fa-volume-mute');
+        volume.querySelector('i.fas').classList.add('fa-volume-up');
+        isMute = !isMute;
     }
 }
 //Events to manage the user interaction

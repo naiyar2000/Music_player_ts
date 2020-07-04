@@ -41,6 +41,7 @@ const progress_bar = document.getElementById('progress-bar') as HTMLElement;
 const volume_container = document.getElementById('volume-container') as HTMLElement;
 const voluem_bar = document.getElementById('volume-bar') as HTMLElement;
 const muted = document.getElementById('mute') as HTMLElement;
+const volume = document.getElementById('volume') as any;
 
 
 
@@ -121,10 +122,16 @@ function setProgress(e: any) {
 function setMute() {
     if(!isMute){
         audio.volume = 0.0;
+        volume.querySelector('i.fas').classList.add('fa-volume-mute');
+        volume.querySelector('i.fas').classList.remove('fa-volume-up');
         isMute = !isMute;
     }else{
         audio.volume = 1.0;
+        volume.querySelector('i.fas').classList.remove('fa-volume-mute');
+        volume.querySelector('i.fas').classList.add('fa-volume-up');
+        isMute = !isMute;
     }
+    
 }
 
 
