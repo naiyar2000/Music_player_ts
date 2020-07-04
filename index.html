@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My music</title>
-    <link rel="stylesheet" href="./public/style.css">
+    <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
 </head>
-<body>
-    <div class="bg-dark">
+<body class="bg-dark">
+    <div>
         <nav class="navbar navbar-expand-md navbar-dark bg-secondary">
             <div class="container-fluid ">
               <a class="navbar-brand" href="#">My music</a>
@@ -47,15 +47,15 @@
         </nav>
         <div class="py-1 px-0" id="music_container">
             <div class="d-flex justify-content-center align-item-center mx-auto">
-                <div class="card mx-1" style="height: 77.6vh; width: 30%; background-color: #ccc">
-                  <div class="d-flex justify-content-center align-item-center"><img class="img-thumbnail mx-auto" id="cover" src="./img/Dancing_On_My_Own.jpg" alt="hello" height="200" width="300"></div>
-                  <div class="card">
+                <div class="card mx-1" style="height: 77.6vh; width: 30%; background-color: #161515">
+                  <div class="d-flex justify-content-center align-item-center"><img class="img-thumbnail mx-auto shadow bg-dark" id="cover" src="./img/Dancing_On_My_Own.jpg" alt="hello" height="200" width="300"></div>
+                  <div class="card shadow mt-1 bg-white rounded" id="song_disp">
                     <div class="playing-status font-weight-bold">Now playing
                     </div>
                     <div class="font-weight-normal" id="title"></div>
                   </div>
                 </div>
-                <div class="card mr-1 p-1" id="song_list" style="width: 70%; background-color: rgb(180, 169, 169) ">
+                <div class="card mr-1 p-1" id="song_list" style="width: 70%; background-color: rgb(0, 0, 0) ">
                   <ul class="list-group" id="ul_list">
                     <li class="card list-group-item mb-1">song1
                     </li>
@@ -67,8 +67,8 @@
                 </div>
             </div>
         </div>
-        <audio src="audio/Dancing On My Own.mp3" id="audio"></audio>
-        <div class="fixed-bottom bg-secondary mx-auto mb-1" style="width: auto; height: 6rem">
+        <audio src="./audio/Dancing On My Own.mp3" id="audio"></audio>
+        <div class="fixed-bottom bg-secondary " style="width: auto; height: 6rem">
             <div class="progress  mt-1" style="height: 3px; cursor: pointer;" id="progress-container">
                 <div class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" id="progress-bar"></div>
             </div>

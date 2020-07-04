@@ -35,3 +35,9 @@ i:hover{
     transform: scale(1.08);
     opacity: 0.8;
 }
+
+@media (min-width: 600px){
+    #song_disp{
+        margin: 0em 4.7em;
+    }
+}
