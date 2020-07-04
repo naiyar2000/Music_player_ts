@@ -26,3 +26,12 @@ body{
     width: 0%;
     transition: width 0.1s linear;
 }
+
+.img-fluid {
+    height: 200px
+}
+
+i:hover{
+    transform: scale(1.08);
+    opacity: 0.8;
+}
