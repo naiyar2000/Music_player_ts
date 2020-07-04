@@ -43,7 +43,10 @@ let isMute = false;
 loadSong(songDetails[songIndex]);
 //Load the song to the audio player
 function loadSong(song) {
-    title.innerText = song.name;
+    // const p = document.createElement('p');
+    // p.innerHTML = `${song.name} <a href='./audio/${song.audiosrc}' download><i class="fas fa-download ml-3" style="cursor: pointer"></i></a>`
+    // title.appendChild(p);
+    title.innerHTML = `<p>${song.name} <a href='./audio/${song.audiosrc}' download><i class="fas fa-download ml-3" style="cursor: pointer"></i></a></p>`;
     audio.src = `./audio/${song.audiosrc}`;
     cover.src = `./img/${song.imgsrc}`;
 }
