@@ -1,13 +1,7 @@
 import { string } from "yargs";
 
-// const songDetails = [
-//     {
-//         audiosrc: string,
-//         imgsrc: string, 
-//         name: string,
-//         artist: string
-//     }
-// ]
+
+//Song details data
 const songDetails: {audiosrc: string, imgsrc: string, name: string, artist: string}[] = [
     {
         audiosrc: '../audio/Dancing_On_My_Own.mp3',
@@ -45,15 +39,12 @@ const music_container = document.getElementById('music_container') as HTMLElemen
 const progress_bar = document.getElementById('progress-bar') as HTMLElement;
 
 
-
-// class playList {
-//     this.genre
-// }
-console.log('hello')
 let songIndex: number  = 0;
 
 loadSong(songDetails[songIndex]);
 
+
+//Load the song to the audio player
 function loadSong(song: any) {
     
     title.innerText = song.name;
@@ -61,6 +52,8 @@ function loadSong(song: any) {
     cover.src = `../img/${song.imgsrc}`;
 }
 
+
+//Play the loaded song 
 function playSong() {
     music_container.classList.add('play');
     play.querySelector('i.far').classList.remove('fa-play-circle');
@@ -68,6 +61,7 @@ function playSong() {
     audio.play();
 }
 
+//Play the previous song
 function prevSong() {
     songIndex--;
 
@@ -79,6 +73,7 @@ function prevSong() {
     playSong();
 }
 
+//Play the next song
 function nextSong() {
     songIndex++;
 
@@ -90,7 +85,7 @@ function nextSong() {
     playSong();
 }
 
-
+//Paust the song
 function pauseSong() {
     music_container.classList.remove('play');
     play.querySelector('i.far').classList.add('fa-play-circle');
@@ -98,6 +93,8 @@ function pauseSong() {
     audio.pause ();
 }
 
+
+//Update the progress bar of the playig song
 function updateProgress(e: any) {
     const { duration, currentTime } = e.srcElement;
     const progressPercent = (currentTime / duration) *100;
@@ -105,6 +102,8 @@ function updateProgress(e: any) {
     progress_bar.setAttribute("aria-valuenow", `${progressPercent}`);
 }
 
+
+//Events to manage the user interaction
 play.addEventListener('click', () => {
     const isPlaying = music_container.classList.contains('play');
 

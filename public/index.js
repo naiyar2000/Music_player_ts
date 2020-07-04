@@ -1,11 +1,4 @@
-// const songDetails = [
-//     {
-//         audiosrc: string,
-//         imgsrc: string, 
-//         name: string,
-//         artist: string
-//     }
-// ]
+//Song details data
 const songDetails = [
     {
         audiosrc: '../audio/Dancing_On_My_Own.mp3',
@@ -40,23 +33,22 @@ const title = document.getElementById('title');
 const cover = document.getElementById('cover');
 const music_container = document.getElementById('music_container');
 const progress_bar = document.getElementById('progress-bar');
-// class playList {
-//     this.genre
-// }
-console.log('hello');
 let songIndex = 0;
 loadSong(songDetails[songIndex]);
+//Load the song to the audio player
 function loadSong(song) {
     title.innerText = song.name;
     audio.src = `../audio/${song.audiosrc}`;
     cover.src = `../img/${song.imgsrc}`;
 }
+//Play the loaded song 
 function playSong() {
     music_container.classList.add('play');
     play.querySelector('i.far').classList.remove('fa-play-circle');
     play.querySelector('i.far').classList.add('fa-pause-circle');
     audio.play();
 }
+//Play the previous song
 function prevSong() {
     songIndex--;
     if (songIndex < 0) {
@@ -65,6 +57,7 @@ function prevSong() {
     loadSong(songDetails[songIndex]);
     playSong();
 }
+//Play the next song
 function nextSong() {
     songIndex++;
     if (songIndex > songDetails.length - 1) {
@@ -73,18 +66,21 @@ function nextSong() {
     loadSong(songDetails[songIndex]);
     playSong();
 }
+//Paust the song
 function pauseSong() {
     music_container.classList.remove('play');
     play.querySelector('i.far').classList.add('fa-play-circle');
     play.querySelector('i.far').classList.remove('fa-pause-circle');
     audio.pause();
 }
+//Update the progress bar of the playig song
 function updateProgress(e) {
     const { duration, currentTime } = e.srcElement;
     const progressPercent = (currentTime / duration) * 100;
     progress_bar.style.width = `${progressPercent}%`;
     progress_bar.setAttribute("aria-valuenow", `${progressPercent}`);
 }
+//Events to manage the user interaction
 play.addEventListener('click', () => {
     const isPlaying = music_container.classList.contains('play');
     if (isPlaying) {
