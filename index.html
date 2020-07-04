@@ -46,10 +46,25 @@
             </div>
         </nav>
         <div class="py-1 px-0" id="music_container">
-            <div style="display: flex;" class="mx-auto">
-                <div class="card mx-1 d-flex flex-row justify-content-center align-item-center" style="height: 100vh; width: 30%; background-color: #ccc">
-                  <div class="image"><img class="img-thumbnail mx-auto" id="cover" src="../img/Dancing_On_My_Own.jpg" alt="hello" height="200" width="300"></div></div>
-                <div class="card mx-0" style="height: 100vh; width: 70%; background-color: rgb(180, 169, 169) " id="title"></div>
+            <div class="d-flex justify-content-center align-item-center mx-auto">
+                <div class="card mx-1" style="height: 77.6vh; width: 30%; background-color: #ccc">
+                  <div class="d-flex justify-content-center align-item-center"><img class="img-thumbnail mx-auto" id="cover" src="./img/Dancing_On_My_Own.jpg" alt="hello" height="200" width="300"></div>
+                  <div class="card">
+                    <div class="playing-status font-weight-bold">Now playing
+                    </div>
+                    <div class="font-weight-normal" id="title"></div>
+                  </div>
+                </div>
+                <div class="card mr-1 p-1" id="song_list" style="width: 70%; background-color: rgb(180, 169, 169) ">
+                  <ul class="list-group" id="ul_list">
+                    <li class="card list-group-item mb-1">song1
+                    </li>
+                    <li class="card list-group-item mb-1">song2
+                    </li>
+                    <li class="card list-group-item mb-1">song3
+                    </li>
+                  </ul>
+                </div>
             </div>
         </div>
         <audio src="audio/Dancing On My Own.mp3" id="audio"></audio>
@@ -81,6 +96,6 @@
             
         </div>
     </div>
-    <script type="module" src="./index.js"></script>
+    <script type="module" src="./public/index.js"></script>
 </body>
 </html>

@@ -50,6 +50,9 @@ const volume = document.getElementById('volume') as any;
 let songIndex: number  = 0;
 let isMute: Boolean = false;
 
+
+
+
 loadSong(songDetails[songIndex]);
 
 
