@@ -44,8 +44,8 @@ loadSong(songDetails[songIndex]);
 //Load the song to the audio player
 function loadSong(song) {
     title.innerText = song.name;
-    audio.src = `../audio/${song.audiosrc}`;
-    cover.src = `../img/${song.imgsrc}`;
+    audio.src = `./audio/${song.audiosrc}`;
+    cover.src = `./img/${song.imgsrc}`;
 }
 //Play the loaded song 
 function playSong() {
