@@ -1,26 +1,26 @@
 //Song details data
 const songDetails = [
     {
-        audiosrc: '../audio/Dancing_On_My_Own.mp3',
-        imgsrc: '../img/Dancing_On_My_Own.jpg',
+        audiosrc: 'Dancing_On_My_Own.mp3',
+        imgsrc: 'Dancing_On_My_Own.jpg',
         name: 'Dancing_On_My_Own',
         artist: 'Calum Scott'
     },
     {
-        audiosrc: '../audio/Insomnia.mp3',
-        imgsrc: '../img/Insomnia.jpg',
+        audiosrc: 'Insomnia.mp3',
+        imgsrc: 'Insomnia.jpg',
         name: 'Insomnia',
         artist: 'Daya'
     },
     {
-        audiosrc: '../audio/Say_Something.mp3',
-        imgsrc: '../img/Say_Something.jpg',
+        audiosrc: 'Say_Something.mp3',
+        imgsrc: 'Say_Something.jpg',
         name: 'Say_Something',
         artist: 'Justin Timberlake'
     },
     {
-        audiosrc: '../audio/Thunder.mp3',
-        imgsrc: '../img/Thunder.jpg',
+        audiosrc: 'Thunder.mp3',
+        imgsrc: 'Thunder.jpg',
         name: 'Thunder',
         artist: 'Imagine Dragons'
     }
