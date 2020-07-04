@@ -36,7 +36,9 @@ const progress_container = document.getElementById('progress-container');
 const progress_bar = document.getElementById('progress-bar');
 const volume_container = document.getElementById('volume-container');
 const voluem_bar = document.getElementById('volume-bar');
+const muted = document.getElementById('mute');
 let songIndex = 0;
+let isMute = false;
 loadSong(songDetails[songIndex]);
 //Load the song to the audio player
 function loadSong(song) {
@@ -89,11 +91,14 @@ function setProgress(e) {
     const duration = audio.duration;
     audio.currentTime = (clickX / width) * duration;
 }
-function setVolume(e) {
-    const width = this.clientWidth;
-    const clickX = e.offsetX;
-    const volume = audio.volume;
-    audio.volume = (clickX / width) * volume;
+function setMute() {
+    if (!isMute) {
+        audio.volume = 0.0;
+        isMute = !isMute;
+    }
+    else {
+        audio.volume = 1.0;
+    }
 }
 //Events to manage the user interaction
 play.addEventListener('click', () => {
@@ -114,4 +119,5 @@ audio.addEventListener('timeupdate', updateProgress);
 // audio.addEventListener('')
 //click on progress bar
 progress_container.addEventListener('click', setProgress);
-//click on volume bar
+//click on volume icon to mute
+muted.addEventListener('click', setMute);

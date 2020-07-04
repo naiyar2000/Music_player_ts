@@ -40,12 +40,14 @@ const progress_container = document.getElementById('progress-container') as HTML
 const progress_bar = document.getElementById('progress-bar') as HTMLElement;
 const volume_container = document.getElementById('volume-container') as HTMLElement;
 const voluem_bar = document.getElementById('volume-bar') as HTMLElement;
+const muted = document.getElementById('mute') as HTMLElement;
 
 
 
 
 
 let songIndex: number  = 0;
+let isMute: Boolean = false;
 
 loadSong(songDetails[songIndex]);
 
@@ -116,12 +118,13 @@ function setProgress(e: any) {
     audio.currentTime = (clickX / width) * duration;
 }
 
-function setVolume(e: any) {
-    const width = this.clientWidth;
-    const clickX = e.offsetX;
-    const volume = audio.volume;
-
-    audio.volume = (clickX / width) * volume;
+function setMute() {
+    if(!isMute){
+        audio.volume = 0.0;
+        isMute = !isMute;
+    }else{
+        audio.volume = 1.0;
+    }
 }
 
 
@@ -150,4 +153,5 @@ audio.addEventListener('timeupdate', updateProgress);
 //click on progress bar
 progress_container.addEventListener('click', setProgress);
 
-//click on volume bar
+//click on volume icon to mute
+muted.addEventListener('click', setMute);
