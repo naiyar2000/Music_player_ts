@@ -1,5 +1,5 @@
 //Song details data
-const songDetails = [
+var songDetails = [
     {
         audiosrc: 'Dancing_On_My_Own.mp3',
         imgsrc: 'Dancing_On_My_Own.jpg',
@@ -25,30 +25,30 @@ const songDetails = [
         artist: 'Imagine Dragons'
     }
 ];
-const audio = document.getElementById('audio');
-const play = document.getElementById('play');
-const prev = document.getElementById('prev');
-const next = document.getElementById('next');
-const title = document.getElementById('title');
-const cover = document.getElementById('cover');
-const music_container = document.getElementById('music_container');
-const progress_container = document.getElementById('progress-container');
-const progress_bar = document.getElementById('progress-bar');
-const volume_container = document.getElementById('volume-container');
-const voluem_bar = document.getElementById('volume-bar');
-const muted = document.getElementById('mute');
-const volume = document.getElementById('volume');
-let songIndex = 0;
-let isMute = false;
+var audio = document.getElementById('audio');
+var play = document.getElementById('play');
+var prev = document.getElementById('prev');
+var next = document.getElementById('next');
+var title = document.getElementById('title');
+var cover = document.getElementById('cover');
+var music_container = document.getElementById('music_container');
+var progress_container = document.getElementById('progress-container');
+var progress_bar = document.getElementById('progress-bar');
+var volume_container = document.getElementById('volume-container');
+var voluem_bar = document.getElementById('volume-bar');
+var muted = document.getElementById('mute');
+var volume = document.getElementById('volume');
+var songIndex = 0;
+var isMute = false;
 loadSong(songDetails[songIndex]);
 //Load the song to the audio player
 function loadSong(song) {
     // const p = document.createElement('p');
     // p.innerHTML = `${song.name} <a href='./audio/${song.audiosrc}' download><i class="fas fa-download ml-3" style="cursor: pointer"></i></a>`
     // title.appendChild(p);
-    title.innerHTML = `<p>${song.name} <a href='./audio/${song.audiosrc}' download><i class="fas fa-download ml-3" style="cursor: pointer"></i></a></p>`;
-    audio.src = `./audio/${song.audiosrc}`;
-    cover.src = `./img/${song.imgsrc}`;
+    title.innerHTML = "<p>" + song.name + " <a href='./audio/" + song.audiosrc + "' download><i class=\"fas fa-download ml-3\" style=\"cursor: pointer\"></i></a></p>";
+    audio.src = "./audio/" + song.audiosrc;
+    cover.src = "./img/" + song.imgsrc;
 }
 //Play the loaded song 
 function playSong() {
@@ -84,15 +84,15 @@ function pauseSong() {
 }
 //Update the progress bar of the playig song
 function updateProgress(e) {
-    const { duration, currentTime } = e.srcElement;
-    const progressPercent = (currentTime / duration) * 100;
-    progress_bar.style.width = `${progressPercent}%`;
-    progress_bar.setAttribute("aria-valuenow", `${progressPercent}`);
+    var _a = e.srcElement, duration = _a.duration, currentTime = _a.currentTime;
+    var progressPercent = (currentTime / duration) * 100;
+    progress_bar.style.width = progressPercent + "%";
+    progress_bar.setAttribute("aria-valuenow", "" + progressPercent);
 }
 function setProgress(e) {
-    const width = this.clientWidth;
-    const clickX = e.offsetX;
-    const duration = audio.duration;
+    var width = this.clientWidth;
+    var clickX = e.offsetX;
+    var duration = audio.duration;
     audio.currentTime = (clickX / width) * duration;
 }
 function setMute() {
@@ -110,8 +110,8 @@ function setMute() {
     }
 }
 //Events to manage the user interaction
-play.addEventListener('click', () => {
-    const isPlaying = music_container.classList.contains('play');
+play.addEventListener('click', function () {
+    var isPlaying = music_container.classList.contains('play');
     if (isPlaying) {
         pauseSong();
     }
@@ -130,3 +130,5 @@ audio.addEventListener('timeupdate', updateProgress);
 progress_container.addEventListener('click', setProgress);
 //click on volume icon to mute
 muted.addEventListener('click', setMute);
+//song ends
+audio.addEventListener('ended', nextSong);

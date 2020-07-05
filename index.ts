@@ -167,3 +167,6 @@ progress_container.addEventListener('click', setProgress);
 
 //click on volume icon to mute
 muted.addEventListener('click', setMute);
+
+//song ends
+audio.addEventListener('ended', nextSong);
