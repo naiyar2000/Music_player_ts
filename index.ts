@@ -49,6 +49,7 @@ const volume = document.getElementById('volume') as any;
 
 let songIndex: number  = 0;
 let isMute: Boolean = false;
+let current_volume = audio.volume;
 
 
 
@@ -124,16 +125,16 @@ function setProgress(e: any) {
     audio.currentTime = (clickX / width) * duration;
 }
 
-function setMute() {
+function setMute(e: any) {
     if(!isMute){
         audio.volume = 0.0;
         volume.querySelector('i.fas').classList.add('fa-volume-mute');
         volume.querySelector('i.fas').classList.remove('fa-volume-up');
         isMute = !isMute;
     }else{
-        audio.volume = 1.0;
-        volume.querySelector('i.fas').classList.remove('fa-volume-mute');
+        console.log(audio.volume);
         volume.querySelector('i.fas').classList.add('fa-volume-up');
+        volume.querySelector('i.fas').classList.remove('fa-volume-mute');      
         isMute = !isMute;
     }
     
@@ -141,6 +142,7 @@ function setMute() {
 
 function setVolume(e: any) {
     audio.volume = e.target.value;
+    current_volume = audio.volume;
 }
 
 

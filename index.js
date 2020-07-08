@@ -41,6 +41,7 @@ var muted = document.getElementById('mute');
 var volume = document.getElementById('volume');
 var songIndex = 0;
 var isMute = false;
+var current_volume = audio.volume;
 loadSong(songDetails[songIndex]);
 //Load the song to the audio player
 function loadSong(song) {
@@ -96,7 +97,7 @@ function setProgress(e) {
     var duration = audio.duration;
     audio.currentTime = (clickX / width) * duration;
 }
-function setMute() {
+function setMute(e) {
     if (!isMute) {
         audio.volume = 0.0;
         volume.querySelector('i.fas').classList.add('fa-volume-mute');
@@ -104,14 +105,15 @@ function setMute() {
         isMute = !isMute;
     }
     else {
-        audio.volume = 1.0;
-        volume.querySelector('i.fas').classList.remove('fa-volume-mute');
+        audio.volume = current_volume;
         volume.querySelector('i.fas').classList.add('fa-volume-up');
+        volume.querySelector('i.fas').classList.remove('fa-volume-mute');
         isMute = !isMute;
     }
 }
 function setVolume(e) {
     audio.volume = e.target.value;
+    current_volume = audio.volume;
 }
 //Events to manage the user interaction
 play.addEventListener('click', function () {
