@@ -41,7 +41,7 @@ const progress_bar = document.getElementById('progress-bar') as HTMLElement;
 const volume_container = document.getElementById('volume-container') as HTMLElement;
 const voluem_bar = document.getElementById('volume-bar') as HTMLElement;
 const muted = document.getElementById('mute') as HTMLElement;
-const volume = document.getElementById('volumeRange') as any;
+const volume = document.getElementById('volume') as any;
 
 
 

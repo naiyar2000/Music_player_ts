@@ -1,3 +1,4 @@
+
 //Song details data
 var songDetails = [
     {
@@ -37,7 +38,7 @@ var progress_bar = document.getElementById('progress-bar');
 var volume_container = document.getElementById('volume-container');
 var voluem_bar = document.getElementById('volume-bar');
 var muted = document.getElementById('mute');
-var volume = document.getElementById('volumeRange');
+var volume = document.getElementById('volume');
 var songIndex = 0;
 var isMute = false;
 loadSong(songDetails[songIndex]);
