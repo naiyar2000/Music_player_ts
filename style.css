@@ -75,6 +75,12 @@ i:hover{
     cursor: pointer; /* Cursor on hover */
   }
 
+  .highlight_list{
+    background-color: rgb(49, 51, 47) !important;
+    color: #d3d3d3;
+    box-shadow: 7px 6px 5px 1px rgba(0,0,0,0.75);
+  }
+
 @media (min-width: 600px){
     #song_disp{
         margin: 0em 4.7em;

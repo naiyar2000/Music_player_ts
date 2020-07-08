@@ -42,6 +42,7 @@ const volume_container = document.getElementById('volume-container') as HTMLElem
 const voluem_bar = document.getElementById('volume-bar') as HTMLElement;
 const muted = document.getElementById('mute') as HTMLElement;
 const volume = document.getElementById('volume') as any;
+const ul_list = document.getElementById('ul_list') as any;
 
 
 
@@ -55,6 +56,7 @@ let current_volume = audio.volume;
 
 
 loadSong(songDetails[songIndex]);
+loadList(songDetails);
 
 
 //Load the song to the audio player
@@ -65,8 +67,33 @@ function loadSong(song: any) {
     title.innerHTML = `<p>${song.name} <a href='./audio/${song.audiosrc}' download><i class="fas fa-download ml-3" style="cursor: pointer"></i></a></p>`
     audio.src = `./audio/${song.audiosrc}`;
     cover.src = `./img/${song.imgsrc}`;
+    
 }
 
+function loadList(song: any) {
+    for(let i =0; i<song.length; i++){
+        // console.log(i);
+        let li: any = document.createElement('li');
+        li.classList =`card list-group-item mb-1 list_${i}`;
+        li.innerHTML = `${song[i].name}`
+        ul_list.appendChild(li);
+    }
+    highlight_list();
+}
+
+function highlight_list() {
+    for(let i =0; i<songDetails.length; i++){
+        // console.log(i);
+        if(songIndex === i) {
+            ul_list.children[i].classList.add('highlight_list');
+            if(i>0){
+            ul_list.children[i-1].classList.remove('highlight_list')
+            }else {
+                ul_list.children[songDetails.length - 1].classList.remove('highlight_list');
+            }
+        }
+    }
+}
 
 //Play the loaded song 
 function playSong() {
@@ -86,6 +113,7 @@ function prevSong() {
 
     loadSong(songDetails[songIndex]);
     playSong();
+    highlight_list();
 }
 
 //Play the next song
@@ -98,6 +126,7 @@ function nextSong() {
 
     loadSong(songDetails[songIndex]);
     playSong();
+    highlight_list()
 }
 
 //Pause the song

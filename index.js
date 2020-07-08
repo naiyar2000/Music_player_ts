@@ -39,10 +39,12 @@ var volume_container = document.getElementById('volume-container');
 var voluem_bar = document.getElementById('volume-bar');
 var muted = document.getElementById('mute');
 var volume = document.getElementById('volume');
+var ul_list = document.getElementById('ul_list');
 var songIndex = 0;
 var isMute = false;
 var current_volume = audio.volume;
 loadSong(songDetails[songIndex]);
+loadList(songDetails);
 //Load the song to the audio player
 function loadSong(song) {
     // const p = document.createElement('p');
@@ -51,6 +53,30 @@ function loadSong(song) {
     title.innerHTML = "<p>" + song.name + " <a href='./audio/" + song.audiosrc + "' download><i class=\"fas fa-download ml-3\" style=\"cursor: pointer\"></i></a></p>";
     audio.src = "./audio/" + song.audiosrc;
     cover.src = "./img/" + song.imgsrc;
+}
+function loadList(song) {
+    for (var i = 0; i < song.length; i++) {
+        // console.log(i);
+        var li = document.createElement('li');
+        li.classList = "card list-group-item mb-1 list_" + i;
+        li.innerHTML = "" + song[i].name;
+        ul_list.appendChild(li);
+    }
+    highlight_list();
+}
+function highlight_list() {
+    for (var i = 0; i < songDetails.length; i++) {
+        // console.log(i);
+        if (songIndex === i) {
+            ul_list.children[i].classList.add('highlight_list');
+            if (i > 0) {
+                ul_list.children[i - 1].classList.remove('highlight_list');
+            }
+            else {
+                ul_list.children[songDetails.length - 1].classList.remove('highlight_list');
+            }
+        }
+    }
 }
 //Play the loaded song 
 function playSong() {
@@ -67,6 +93,7 @@ function prevSong() {
     }
     loadSong(songDetails[songIndex]);
     playSong();
+    highlight_list();
 }
 //Play the next song
 function nextSong() {
@@ -76,6 +103,7 @@ function nextSong() {
     }
     loadSong(songDetails[songIndex]);
     playSong();
+    highlight_list();
 }
 //Pause the song
 function pauseSong() {
@@ -105,7 +133,7 @@ function setMute(e) {
         isMute = !isMute;
     }
     else {
-        audio.volume = current_volume;
+        console.log(audio.volume);
         volume.querySelector('i.fas').classList.add('fa-volume-up');
         volume.querySelector('i.fas').classList.remove('fa-volume-mute');
         isMute = !isMute;
