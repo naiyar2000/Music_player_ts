@@ -161,7 +161,7 @@ function setMute(e: any) {
         volume.querySelector('i.fas').classList.remove('fa-volume-up');
         isMute = !isMute;
     }else{
-        console.log(audio.volume);
+        audio.volume = current_volume;
         volume.querySelector('i.fas').classList.add('fa-volume-up');
         volume.querySelector('i.fas').classList.remove('fa-volume-mute');      
         isMute = !isMute;
