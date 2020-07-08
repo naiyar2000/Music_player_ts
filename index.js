@@ -37,7 +37,7 @@ var progress_bar = document.getElementById('progress-bar');
 var volume_container = document.getElementById('volume-container');
 var voluem_bar = document.getElementById('volume-bar');
 var muted = document.getElementById('mute');
-var volume = document.getElementById('volume');
+var volume = document.getElementById('volumeRange');
 var songIndex = 0;
 var isMute = false;
 loadSong(songDetails[songIndex]);
@@ -109,6 +109,9 @@ function setMute() {
         isMute = !isMute;
     }
 }
+function setVolume(e) {
+    audio.volume = e.target.value;
+}
 //Events to manage the user interaction
 play.addEventListener('click', function () {
     var isPlaying = music_container.classList.contains('play');
@@ -130,5 +133,7 @@ audio.addEventListener('timeupdate', updateProgress);
 progress_container.addEventListener('click', setProgress);
 //click on volume icon to mute
 muted.addEventListener('click', setMute);
+//set volume
+voluem_bar.addEventListener('click', setVolume);
 //song ends
 audio.addEventListener('ended', nextSong);

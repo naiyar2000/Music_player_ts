@@ -41,7 +41,7 @@ const progress_bar = document.getElementById('progress-bar') as HTMLElement;
 const volume_container = document.getElementById('volume-container') as HTMLElement;
 const voluem_bar = document.getElementById('volume-bar') as HTMLElement;
 const muted = document.getElementById('mute') as HTMLElement;
-const volume = document.getElementById('volume') as any;
+const volume = document.getElementById('volumeRange') as any;
 
 
 
@@ -139,6 +139,10 @@ function setMute() {
     
 }
 
+function setVolume(e: any) {
+    audio.volume = e.target.value;
+}
+
 
 //Events to manage the user interaction
 play.addEventListener('click', () => {
@@ -168,5 +172,9 @@ progress_container.addEventListener('click', setProgress);
 //click on volume icon to mute
 muted.addEventListener('click', setMute);
 
+//set volume
+voluem_bar.addEventListener('click', setVolume);
+
 //song ends
 audio.addEventListener('ended', nextSong);
+
