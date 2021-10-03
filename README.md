@@ -1,4 +1,4 @@
-# Music_player_ts
+# Music_player__ts
 
 This is a demo link for the music player created using bootstrap and typescript.
 
