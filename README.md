@@ -9,6 +9,6 @@ Demo:  https://naiyar2000.github.io/Music_player_ts/
 
 Basic music player built using the typescript.banda
 
-And enjoy your favorite songs.
+And enjoy your favorite songs with it.
 
 This is awesome.
