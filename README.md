@@ -3,7 +3,7 @@
 
 # Music_player__ts
 
-This is a demo link for the Music Player created using bootstrap and typescript.
+This is a demo link for the Music Player created using bootstrap and typescript. wiki
 
 Demo:  https://naiyar2000.github.io/Music_player_ts/
 
