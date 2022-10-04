@@ -11,4 +11,4 @@ Basic music player built using the typescript.banda
 
 And enjoy your favorite songs with it.
 
-This is awesome.
+This is awesome. Ghanta.
