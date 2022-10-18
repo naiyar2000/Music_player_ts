@@ -26,6 +26,12 @@ const songDetails: {audiosrc: string, imgsrc: string, name: string, artist: stri
         imgsrc: 'Thunder.jpg', 
         name:'Thunder',
         artist: 'Imagine Dragons'
+    },
+    {
+        audiosrc: 'Road_Trip.mp3.mp3',
+        imgsrc: 'Road_Trip.mp3.png', 
+        name:'Road_Trip',
+        artist: 'unknown'
     }
 ]
 
