@@ -24,6 +24,12 @@ var songDetails = [
         imgsrc: 'Thunder.jpg',
         name: 'Thunder',
         artist: 'Imagine Dragons'
+    },
+    {
+        audiosrc: 'Road_Trip.mp3.mp3',
+        imgsrc: 'Road_Trip.mp3.png', 
+        name:'Road_Trip',
+        artist: 'unknown'
     }
 ];
 var audio = document.getElementById('audio');
