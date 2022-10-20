@@ -24,3 +24,5 @@ Edited by Satya Ranjan Nayak.
 
 Edited by Smruti Ranjan Swain
 
+Edited by Sanjeeb Gochhayat
+
