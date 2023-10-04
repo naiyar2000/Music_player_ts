@@ -10,7 +10,7 @@ This is a demo link for the Music Player created using bootstrap and typescript
 
 Demo:  https://naiyar2000.github.io/Music_player_ts/
 
-Basic music player application built using the typescript.banda
+Basic music player application built using the typescript.ban
 
 And enjoy your favorite songs with it.
 
