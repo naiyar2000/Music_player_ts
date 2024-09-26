@@ -1,7 +1,7 @@
 import { string } from "yargs";
 
 
-//Song details data
+//Song details data ..
 const songDetails: {audiosrc: string, imgsrc: string, name: string, artist: string}[] = [
     {
         audiosrc: 'Dancing_On_My_Own.mp3',
